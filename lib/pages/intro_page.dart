@@ -40,7 +40,14 @@ class IntroPage extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 25,),
-        MyButton(text: "Get Started")
+        MyButton(
+            text: "Get Started",
+            onTap:() {
+              //Go to menu page
+              Navigator.pushNamed(context, '/menupage');
+            },
+
+        )
       ],
        ),
       ),
