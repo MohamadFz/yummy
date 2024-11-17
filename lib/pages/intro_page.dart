@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yummy/components/button.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -15,9 +16,8 @@ class IntroPage extends StatelessWidget {
          crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-      const SizedBox(height: 25,),
-      const Text("Pizza Shop",
-        style: TextStyle(
+      const SizedBox(height: 25,), Text("Pizza Shop",
+        style: GoogleFonts.ubuntu(
           fontSize: 25,
         ),
       ),
@@ -27,18 +27,20 @@ class IntroPage extends StatelessWidget {
           child: Image.asset('lib/images/pizza2.png'),
         ),
         const SizedBox(height: 25,),
-        const Text("Love at First Slice",
-        style: TextStyle(
-            fontSize: 30),
+        Text("Love at First Slice",
+        style: GoogleFonts.ubuntu(
+          fontSize: 30,
         ),
-        const SizedBox(height: 10,),
-        const Text("An old-school pizzeria using quality ingredients with most items cooked from scratch.",
-          style: TextStyle(
-              fontSize: 20,
-          height: 2,
-          color: Color(0xff404040),
+        ),
+
+        Text("An old-school pizzeria using quality ingredients with most items cooked from scratch.",
+          style: GoogleFonts.ubuntu(
+            fontSize: 20,
+            height: 2,
+            color: Color(0xff404040),
           ),
-        ),
+
+          ),
         const SizedBox(height: 25,),
         MyButton(
             text: "Get Started",
