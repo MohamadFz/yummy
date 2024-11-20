@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:yummy/components/button.dart';
+import 'package:yummy/components/food_tile.dart';
 import 'package:yummy/models/food.dart';
 import 'package:yummy/theme/colors.dart';
 
@@ -114,6 +115,13 @@ class _MenuPageState extends State<MenuPage> {
           const SizedBox(
             height: 10,
           ),
+          Expanded(
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: foodmenu.length,
+                  itemBuilder: (context, index) => FoodTile(
+                        food: foodmenu[index],
+                      )))
           // popular food
         ],
       ),
