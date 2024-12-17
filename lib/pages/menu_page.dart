@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:yummy/components/button.dart';
 import 'package:yummy/components/food_tile.dart';
 import 'package:yummy/models/food.dart';
+import 'package:yummy/pages/food_details_page.dart';
 import 'package:yummy/theme/colors.dart';
 
 class MenuPage extends StatefulWidget {
@@ -30,6 +31,17 @@ class _MenuPageState extends State<MenuPage> {
         imagePath: "lib/images/pizza.png",
         rating: "5.0")
   ];
+
+  void navigateToFoodDetail(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FoodDetailsPage(
+          food: foodmenu[index],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,8 +133,96 @@ class _MenuPageState extends State<MenuPage> {
                   itemCount: foodmenu.length,
                   itemBuilder: (context, index) => FoodTile(
                         food: foodmenu[index],
-                      )))
+                        onTap: () => navigateToFoodDetail(index),
+                      ))),
+          const SizedBox(
+            height: 25,
+          ),
           // popular food
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              borderRadius: BorderRadius.circular(20),
+            ),
+            margin: EdgeInsets.only(left: 25, right: 25, bottom: 25),
+            padding: EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Image.asset(
+                      'lib/images/pizza.png',
+                      height: 60,
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Neapolitan pizza',
+                          style: GoogleFonts.ubuntu(fontSize: 18),
+                        ),
+                        Text(
+                          '\$21.00',
+                          style: TextStyle(color: Colors.grey[700]),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                Icon(
+                  Icons.favorite_outline,
+                  color: Colors.grey,
+                  size: 28,
+                )
+              ],
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              borderRadius: BorderRadius.circular(20),
+            ),
+            margin: EdgeInsets.only(left: 25, right: 25, bottom: 25),
+            padding: EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Image.asset(
+                      'lib/images/mainPic.png',
+                      height: 60,
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Special Package',
+                          style: GoogleFonts.ubuntu(fontSize: 18),
+                        ),
+                        Text(
+                          '\$35.00',
+                          style: TextStyle(color: Colors.grey[700]),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                Icon(
+                  Icons.favorite_outline,
+                  color: Colors.grey,
+                  size: 28,
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
