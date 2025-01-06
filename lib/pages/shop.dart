@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
+
 import '../models/food.dart';
 
-class Shop {
+class Shop extends ChangeNotifier {
   final List<Food> _foodmenu = [
     Food(
         name: "Hot Dog",
@@ -31,10 +33,12 @@ class Shop {
     for (int i = 0; i < quantity; i++) {
       _cart.add(foodItem);
     }
+    notifyListeners();
   }
 
   //Remove from the cart
   void removeFromCart(Food food) {
     _cart.remove(food);
+    notifyListeners();
   }
 }
