@@ -47,6 +47,13 @@ class _MenuPageState extends State<MenuPage> {
           "Pizza Shop",
           style: GoogleFonts.ubuntu(color: Colors.black54),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/cartpage');
+              },
+              icon: Icon(Icons.shopping_cart))
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
