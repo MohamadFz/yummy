@@ -52,7 +52,12 @@ class _MenuPageState extends State<MenuPage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/cartpage');
               },
-              icon: Icon(Icons.shopping_cart))
+              icon: Icon(Icons.shopping_cart)),
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/rivesample');
+              },
+              icon: Icon(Icons.animation))
         ],
       ),
       body: Column(

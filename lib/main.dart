@@ -4,6 +4,7 @@ import 'package:yummy/pages/cart_page.dart';
 import 'package:yummy/pages/intro_page.dart';
 import 'package:yummy/pages/menu_page.dart';
 
+import 'pages/rive_sample.dart';
 import 'pages/shop.dart';
 
 void main() {
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/intropage': (context) => const IntroPage(),
         '/menupage': (context) => const MenuPage(),
-        '/cartpage': (context) => const CartPage()
+        '/cartpage': (context) => const CartPage(),
+        '/rivesample': (context) => const RiveSample()
       },
     );
   }
